@@ -1,9 +1,10 @@
 import React from "react";
 import apiClient from "../services/api-client";
 
-interface Game {
+export interface Game {
   id: string;
   name: String;
+  background_image: string;
 }
 
 interface FetchGamesResponse {
