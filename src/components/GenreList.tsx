@@ -1,7 +1,8 @@
-import React from "react";
+import useGenres, { Genre } from "../hooks/useGenre";
 
 const GenreList = () => {
-  return <div>GenreList</div>;
+  const { data } = useGenres();
+  return <div></div>;
 };
 
 export default GenreList;
