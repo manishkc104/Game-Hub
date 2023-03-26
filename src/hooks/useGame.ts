@@ -1,10 +1,16 @@
 import React from "react";
 import apiClient from "../services/api-client";
 
+export interface Platform {
+  id: number;
+  name: string;
+  slug: string;
+}
 export interface Game {
   id: string;
   name: String;
   background_image: string;
+  parent_platforms: { platform: Platform }[];
 }
 
 interface FetchGamesResponse {
@@ -17,10 +23,12 @@ const useGames = () => {
   const [error, setError] = React.useState("");
 
   React.useEffect(() => {
+    const controller = new AbortController();
     apiClient
       .get<FetchGamesResponse>("/games")
       .then((res) => setGames(res.data.results))
       .catch((err) => setError(err.message));
+    return () => controller.abort();
   }, []);
 
   return {
