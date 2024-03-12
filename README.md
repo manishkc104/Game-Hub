@@ -58,7 +58,7 @@ This section describes how you can setup the project locally. To get the local c
 
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/your_username_/Game-Hub.git
    ```
 3. Install NPM packages
 
